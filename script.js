@@ -1,11 +1,11 @@
 "use strict";
 
 function createCounter() {
-  let count = 0; // Локальная переменная
+  let count = 0; 
 
   return function (num) {
       count += num;
-      return count; // Возвращает текущее значение
+      return count; 
   };
 }
 
