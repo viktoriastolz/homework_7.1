@@ -1,25 +1,20 @@
 "use strict";
 
-const ladder = {
-  step: 0,
-  
-  up: function () {
-    this.step++;
-    return this; 
-  },
-  
-  down: function () {
-    this.step--;
-    return this; 
-  },
-  
-  showStep: function () {
-    console.log(this.step); 
-    return this; 
-  }
-};
+function createCounter() {
+  let count = 0; // Локальная переменная
 
-ladder.up().up().down().showStep(); // 1
+  return function (num) {
+      count += num;
+      return count; // Возвращает текущее значение
+  };
+}
+
+const sum = createCounter();
+
+console.log(sum(4)); // 4
+console.log(sum(6)); // 10
+console.log(sum(10)); // 20
+console.log(sum(7)); // 27
 
 
 
